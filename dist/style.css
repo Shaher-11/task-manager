@@ -1,4 +1,11 @@
 body {
-  background-color: black;
-  color: white;
+  background-color:rgb(114, 210, 235);
 }
+
+h1 {
+  color: brown;
+}
+header {
+  font-size: 2.4rem;
+}
+
