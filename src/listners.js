@@ -1,5 +1,3 @@
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
-import formatISO from 'date-fns/formatISO';
 import {
   projectsList, countProjects, deleteFromProjectList,
   editProjectTitle, addTaskToProject, findProject,
@@ -16,7 +14,6 @@ let projectsCounter = countProjects;
 const Project = require('./project').default;
 const Task = require('./task').default;
 
-
 const openTab = (e) => {
   const id = e.target.dataset.projectId;
   const projectDiv = document.querySelector(`#proj_${id}`);
@@ -26,7 +23,6 @@ const openTab = (e) => {
   }
   projectDiv.classList.toggle('shown');
 };
-
 
 const cancelAddProject = () => {
   const input = document.querySelector('#project_title');
@@ -99,7 +95,6 @@ const cancelAddTask = (e) => {
   form.classList.toggle('hide');
 };
 
-
 const deleteTask = (e) => {
   const taskId = e.target.dataset.TaskId;
   const projId = e.target.dataset.TaskProjId;
@@ -107,7 +102,6 @@ const deleteTask = (e) => {
   const TaskCard = document.querySelector(`#task_card_${projId}_${taskId}`);
   const tasksWrapper = document.querySelector(`#tasks_wrapper_${projId}`);
   tasksWrapper.removeChild(TaskCard);
-
 
   // remove from project list
   const projectIndx = findProject(projectsList, projId);
@@ -308,7 +302,6 @@ const displayTask = (task) => {
   editPrioritySelect.append(editPriorityOption1, editPriorityOption2, editPriorityOption3);
   editPrioritySelect.value = task.priority;
   editPrioritySpan.append(editPriorityLabel, editPrioritySelect);
-
 
   const editStatusSpan = document.createElement('span');
   editStatusSpan.setAttribute('class', 'edit_task_select_span');
@@ -554,7 +547,6 @@ const displayProject = (project) => {
   editProjectImage.dataset.projectId = project.id;
   editProjectImage.addEventListener('click', e => editProject(e));
 
-
   const deleteProjectImage = new Image();
   deleteProjectImage.setAttribute('src', deleteProjectIcon);
   deleteProjectImage.setAttribute('class', 'add_proj_icon');
@@ -566,12 +558,10 @@ const displayProject = (project) => {
   projectShowRightBtns.append(editProjectImage, deleteProjectImage);
   spanShowMode.append(btn, projectShowRightBtns);
 
-
   const editProjTitleInput = document.createElement('input');
   editProjTitleInput.setAttribute('type', 'text');
   editProjTitleInput.setAttribute('id', `edit_project_title_${project.id}`);
   editProjTitleInput.setAttribute('value', project.title);
-
 
   const submitProjectImage = new Image();
   submitProjectImage.setAttribute('src', submitProjectIcon);
@@ -617,6 +607,5 @@ const addProject = () => {
   const form = document.querySelector('#add_project_form');
   form.classList.toggle('hide');
 };
-
 
 export { addProject, cancelAddProject, displayProject };
