@@ -171,9 +171,6 @@ const submitEditTask = (e) => {
   priorityDisplay.classList.remove(`priority_box_${priorityLast}`);
   priorityDisplay.classList.add(`priority_box_${task.priority}`);
 
-  const dateDisplay = document.querySelector(`#display_task_date_${projId}_${taskId}`);
-  dateDisplay.textContent = formatDistanceToNow(task.formatedDueDate(), { addSuffix: true });
-
   const statusDisplay = document.querySelector(`#display_task_status_${projId}_${taskId}`);
   statusDisplay.textContent = task.status;
   statusDisplay.classList.remove(`task_status_${statusLast}`);
@@ -210,7 +207,6 @@ const displayTask = (task) => {
   divShowModeRight.setAttribute('class', 'div_show_mode_right');
 
   const spanDueDate = document.createElement('span');
-  spanDueDate.textContent = formatDistanceToNow(task.formatedDueDate(), { addSuffix: true });
   spanDueDate.setAttribute('id', `display_task_date_${task.projId}_${task.id}`);
 
   const editTaskImage = new Image();
@@ -218,14 +214,14 @@ const displayTask = (task) => {
   editTaskImage.setAttribute('class', 'add_proj_icon');
   editTaskImage.dataset.TaskId = task.id;
   editTaskImage.dataset.TaskProjId = task.projId;
-  editTaskImage.addEventListener('click', e => cancelEditTask(e));
+  editTaskImage.addEventListener('click', (e) => cancelEditTask(e));
 
   const deleteTaskImage = new Image();
   deleteTaskImage.setAttribute('src', deleteProjectIcon);
   deleteTaskImage.setAttribute('class', 'add_proj_icon');
   deleteTaskImage.dataset.TaskId = task.id;
   deleteTaskImage.dataset.TaskProjId = task.projId;
-  deleteTaskImage.addEventListener('click', e => deleteTask(e));
+  deleteTaskImage.addEventListener('click', (e) => deleteTask(e));
 
   divShowModeRight.append(spanDueDate, editTaskImage, deleteTaskImage);
 
@@ -350,8 +346,7 @@ const displayTask = (task) => {
   editTaskFormCancel.dataset.TaskId = task.id;
   editTaskFormCancel.dataset.TaskProjId = task.projId;
 
-
-  editTaskFormCancel.addEventListener('click', e => cancelEditTask(e));
+  editTaskFormCancel.addEventListener('click', (e) => cancelEditTask(e));
 
   editTaskFormButtons.append(editTaskFormSubmit, editTaskFormCancel);
 
@@ -409,7 +404,7 @@ const taskNav = (myproject) => {
 
   const headerAddTask = document.createElement('button');
   headerAddTask.dataset.projectId = myproject.id;
-  headerAddTask.addEventListener('click', e => cancelAddTask(e));
+  headerAddTask.addEventListener('click', (e) => cancelAddTask(e));
 
   headerAddTask.setAttribute('class', 'header_add_task');
   const addTaskImage = new Image();
@@ -419,7 +414,6 @@ const taskNav = (myproject) => {
   addTaskSpan.setAttribute('class', 'add_task_span');
   addTaskSpan.textContent = 'Add a Task';
   headerAddTask.append(addTaskImage, addTaskSpan);
-
 
   header.append(headerTitle, headerAddTask);
 
@@ -484,7 +478,6 @@ const taskNav = (myproject) => {
   const addDateInput = document.createElement('input');
   addDateInput.setAttribute('type', 'date');
   addDateInput.setAttribute('id', `task_date_${myproject.id}`);
-  addDateInput.value = formatISO(new Date(), { representation: 'date' });
   addDateSpan.append(addDateLabel, addDateInput);
 
   const addTaskFormButtons = document.createElement('div');
@@ -499,7 +492,7 @@ const taskNav = (myproject) => {
   addTaskFormCancel.classList.add('cancel_btn');
   addTaskFormCancel.textContent = 'Cancel';
   addTaskFormCancel.dataset.projectId = myproject.id;
-  addTaskFormCancel.addEventListener('click', e => cancelAddTask(e));
+  addTaskFormCancel.addEventListener('click', (e) => cancelAddTask(e));
 
   addTaskFormButtons.append(addTaskFormCreate, addTaskFormCancel);
 
@@ -512,7 +505,7 @@ const taskNav = (myproject) => {
   tasksWrapper.setAttribute('id', `tasks_wrapper_${myproject.id}`);
   tasksWrapper.setAttribute('class', 'tasks_wrapper');
 
-  myproject.tasks.forEach(element => {
+  myproject.tasks.forEach((element) => {
     tasksWrapper.append(displayTask(element));
     return tasksWrapper;
   });
@@ -545,13 +538,13 @@ const displayProject = (project) => {
   editProjectImage.setAttribute('src', editProjectIcon);
   editProjectImage.setAttribute('class', 'add_proj_icon');
   editProjectImage.dataset.projectId = project.id;
-  editProjectImage.addEventListener('click', e => editProject(e));
+  editProjectImage.addEventListener('click', (e) => editProject(e));
 
   const deleteProjectImage = new Image();
   deleteProjectImage.setAttribute('src', deleteProjectIcon);
   deleteProjectImage.setAttribute('class', 'add_proj_icon');
   deleteProjectImage.dataset.projectId = project.id;
-  deleteProjectImage.addEventListener('click', e => deleteProject(e));
+  deleteProjectImage.addEventListener('click', (e) => deleteProject(e));
 
   const projectShowRightBtns = document.createElement('span');
   projectShowRightBtns.classList.add('project_right_buttons');
@@ -573,7 +566,7 @@ const displayProject = (project) => {
   cancelProjectImage.setAttribute('src', cancelProjectIcon);
   cancelProjectImage.setAttribute('class', 'add_proj_icon');
   cancelProjectImage.dataset.projectId = project.id;
-  cancelProjectImage.addEventListener('click', e => cancelProject(e));
+  cancelProjectImage.addEventListener('click', (e) => cancelProject(e));
 
   const projectEditRightBtns = document.createElement('span');
   projectEditRightBtns.classList.add('project_right_buttons');
