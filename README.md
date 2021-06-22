@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # JAVASCRIPT PROJECT: TO-DO-LIST
-
+A list of projects organized by priority. Each project has a title, description, due date and priority. You can view all projects and a project's details. Projects can be deleted.
 
 ## Built With
 - HTML5
