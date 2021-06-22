@@ -1,53 +1,57 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# 
-
-#### 
+# JAVASCRIPT PROJECT: TO-DO-LIST
 
 
-## Built with
-
-- Ruby -v 3.0.0
-- Rails -v 6.1.3.1
-- SQLite3
-- VScode
+## Built With
+- HTML5
+- CSS
+- Javascript
 - Lots of love :heart:
 
 ## Getting Started
+To get a local copy up and running follow these simple example steps:
+- Open Terminal.
+- Change the current working directory to the location you want the cloned directory.
+- Enter the following:
+```
+$ git clone git@github.com:Shaher-11/task-manager.git.
+
+```
+- Press Enter to create your local clone.
+- run ```cd task-manager```
+- now you an open the project with any code editor and go live or simply open the index.html page with the browser.
+
 
 ### Prerequisites
+- GitHub
+- Git
 
-To get this project up and running locally, you must already have ruby and the necessary gems installed on your computer
 
 ### Installation
+calhost:3000 to open the application
 
-In order to run the linter on your local machine, please run the following commands on your terminal:
+## Authors:
 
-> 1. Run `https://github.com/Shaher-11/private-events.git`
-> 2. Run `cd private-events`
-> 3. Run bundle install to get the necessary gems.
-> 4. Run yarn install.
-> 5. Run rails db:migrate.
-> 6. Run rails server 
-> 7. Open localhost:3000 to open the application
 
-## Author:
-
- 
  👤 **Shaher Shamroukh**
- 
+
 [<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/Shaher-11)
 [<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/ShaherShamroukh/)
 [<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/shaher-shamroukh/)
  <a href="mailto:shahershamroukh@gmail.com?subject=Hey Shaher!"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
- 
 
+ 👤 **Amira Abouhadid**
+
+ - GitHub: [@amiraabouhadid](https://github.com/amiraabouhadid)
+ - Twitter: [@AbouhadidAmira](https://twitter.com/AbouhadidAmira)
+ - LinkedIn: [amira-abouhadid](https://www.linkedin.com/in/amira-abouhadid/)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Shaher-11/private-events/issues).
+Feel free to check the [issues page](https://github.com/Shaher-11/task-manager/issues).
 
 ## Show your support
 
