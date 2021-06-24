@@ -1,7 +1,7 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_title", "_tasks", "_id" , "_taskCounter" ,
  "_description", "_dueDate" , "_status" , "_priority" , "_projId"] }] */
-const Project = require('./project').default;
-const Task = require('./task').default;
+const Project = import('./project');
+const Task = import('./task');
 
 const tasksContainer = document.createElement('div');
 tasksContainer.setAttribute('id', 'tasks_container');
