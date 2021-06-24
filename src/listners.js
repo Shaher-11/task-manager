@@ -404,7 +404,7 @@ const taskNav = (myproject) => {
 
   const headerAddTask = document.createElement('button');
   headerAddTask.dataset.projectId = myproject.id;
-  headerAddTask.addEventListener('click', (e) => cancelAddTask(e));
+  headerAddTask.addEventListener('click', (e) => cancelAddTask(e)); //addTask?
 
   headerAddTask.setAttribute('class', 'header_add_task');
   const addTaskImage = new Image();
