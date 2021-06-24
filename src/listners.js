@@ -86,9 +86,9 @@ const submitEditProject = (e) => {
 const cancelAddTask = (e) => {
   const id = e.target.dataset.projectId;
   const titleInput = document.querySelector(`#task_title_${id}`);
-  titleInput.value = '';
+  titleInput.value = null;
   const descriptionInput = document.querySelector(`#task_description_${id}`);
-  descriptionInput.value = '';
+  descriptionInput.value = null;
   const priorityInput = document.querySelector(`#task_priority_${id}`);
   priorityInput.value = 'low';
   const form = document.querySelector(`#add_task_form_${id}`);
