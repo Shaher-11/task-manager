@@ -103,7 +103,6 @@ const deleteTask = (e) => {
   const tasksWrapper = document.querySelector(`#tasks_wrapper_${projId}`);
   tasksWrapper.removeChild(TaskCard);
 
-  // remove from project list
   const projectIndx = findProject(projectsList, projId);
   const project = projectsList[projectIndx];
   project.removeTask(taskId);
