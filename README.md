@@ -4,7 +4,7 @@
 A list of projects organized by priority. Each project has a title, description, due date and priority. You can view all projects and a project's details. Projects and tasks belonging to each project can be added or deleted.
 
 ## Live Demo
-[!Live Demo](https://eager-joliot-1d58fe.netlify.app/)
+[!Live Demo](https://jovial-wing-9883c2.netlify.app/)
 
 ## Built With
 - HTML5
