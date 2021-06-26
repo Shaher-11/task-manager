@@ -1,32 +1,6 @@
 import { addProject, cancelAddProject, displayProject } from './listners';
 import addProjIcon from './add.png';
 
-// const navBar = (projList) => {
-//   const divNavWrap = document.createElement('div');
-//   divNavWrap.setAttribute('id', 'project_nav');
-
-//   const brand = document.createElement('div');
-//   brand.setAttribute('class', 'logo_project');
-//   brand.textContent = 'My To-do List';
-
-//   const addProj = document.createElement('button');
-//   addProj.setAttribute('id', 'add_project');
-//   const addProjectImage = new Image();
-//   addProjectImage.setAttribute('src', addProjIcon);
-//   addProjectImage.setAttribute('class', 'add_proj_icon');
-//   const addProjText = document.createElement('span');
-//   addProjText.textContent = 'Projects';
-//   addProj.append(addProjText, addProjectImage);
-//   addProj.addEventListener('click', () => cancelAddProject());
-
-//   const addProjForm = document.createElement('div');
-//   addProjForm.setAttribute('id', 'add_project_form');
-//   addProjForm.classList.add('hide');
-//   const addProjTitleInput = document.createElement('input');
-//   addProjTitleInput.setAttribute('type', 'text');
-//   addProjTitleInput.setAttribute('id', 'project_title');
-//   addProjTitleInput.setAttribute('placeholder', 'Type your project title here!');
-//   const addProjectFormButtons = document.createElement('div
 export default ((projList) => {
   const divNavWrap = document.createElement('div');
   divNavWrap.setAttribute('id', 'project_nav');
