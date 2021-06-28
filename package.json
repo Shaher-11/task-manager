@@ -5,6 +5,7 @@
   "main": "main.js",
   "private": true,
   "scripts": {
+    "dev": "webpack --mode development",
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
@@ -37,3 +38,4 @@
     "webpack-dev-server": "^3.11.2"
   }
 }
+  
