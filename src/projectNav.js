@@ -1,7 +1,9 @@
 import { addProject, cancelAddProject, displayProject } from './listners';
 import addProjIcon from './add.png';
 
-export default ((projList) => {
+// input: projects list
+// output: DOM: create the project nav div
+const projectNav = (projList) => {
   const divNavWrap = document.createElement('div');
   divNavWrap.setAttribute('id', 'project_nav');
 
@@ -18,6 +20,8 @@ export default ((projList) => {
   addProjText.textContent = 'Projects';
   addProj.append(addProjText, addProjectImage);
   addProj.addEventListener('click', () => cancelAddProject());
+
+  // Add project form
 
   const addProjForm = document.createElement('div');
   addProjForm.setAttribute('id', 'add_project_form');
@@ -52,4 +56,6 @@ export default ((projList) => {
   });
   divNavWrap.append(brand, addProj, addProjForm, tabsDiv);
   return divNavWrap;
-})();
+};
+
+export default projectNav;

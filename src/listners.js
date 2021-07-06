@@ -86,9 +86,9 @@ const submitEditProject = (e) => {
 const cancelAddTask = (e) => {
   const id = e.target.dataset.projectId;
   const titleInput = document.querySelector(`#task_title_${id}`);
-  titleInput.value = null;
+  titleInput.value = '';
   const descriptionInput = document.querySelector(`#task_description_${id}`);
-  descriptionInput.value = null;
+  descriptionInput.value = '';
   const priorityInput = document.querySelector(`#task_priority_${id}`);
   priorityInput.value = 'low';
   const form = document.querySelector(`#add_task_form_${id}`);
@@ -103,6 +103,7 @@ const deleteTask = (e) => {
   const tasksWrapper = document.querySelector(`#tasks_wrapper_${projId}`);
   tasksWrapper.removeChild(TaskCard);
 
+  // remove from project list
   const projectIndx = findProject(projectsList, projId);
   const project = projectsList[projectIndx];
   project.removeTask(taskId);
@@ -170,6 +171,9 @@ const submitEditTask = (e) => {
   priorityDisplay.classList.remove(`priority_box_${priorityLast}`);
   priorityDisplay.classList.add(`priority_box_${task.priority}`);
 
+  // const dateDisplay = document.querySelector(`#display_task_date_${projId}_${taskId}`);
+  // dateDisplay.textContent = formatDistanceToNow(task.formatedDueDate(), { addSuffix: true });
+
   const statusDisplay = document.querySelector(`#display_task_status_${projId}_${taskId}`);
   statusDisplay.textContent = task.status;
   statusDisplay.classList.remove(`task_status_${statusLast}`);
@@ -206,6 +210,7 @@ const displayTask = (task) => {
   divShowModeRight.setAttribute('class', 'div_show_mode_right');
 
   const spanDueDate = document.createElement('span');
+  // spanDueDate.textContent = formatDistanceToNow(task.formatedDueDate(), { addSuffix: true });
   spanDueDate.setAttribute('id', `display_task_date_${task.projId}_${task.id}`);
 
   const editTaskImage = new Image();
@@ -477,6 +482,7 @@ const taskNav = (myproject) => {
   const addDateInput = document.createElement('input');
   addDateInput.setAttribute('type', 'date');
   addDateInput.setAttribute('id', `task_date_${myproject.id}`);
+  // addDateInput.value = formatISO(new Date(), { representation: 'date' });
   addDateSpan.append(addDateLabel, addDateInput);
 
   const addTaskFormButtons = document.createElement('div');
@@ -513,6 +519,9 @@ const taskNav = (myproject) => {
   return divNavWrap;
 };
 
+// input (project : object)
+// output : DOM object (div that show project details: left side and right side )
+// depencies: taskNav, openTab, editProject, deleteProject, submitEditProject, cancelProject
 const displayProject = (project) => {
   const wraper = document.createElement('div');
   wraper.setAttribute('id', `project_container_${project.id}`);

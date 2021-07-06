@@ -67,4 +67,5 @@ class Task {
     return date;
   }
 }
+
 export default Task;
