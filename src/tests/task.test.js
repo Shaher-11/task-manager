@@ -46,3 +46,18 @@ test('description setter modifies the task description', () => {
   task.description = 'modified description';
   expect(task.description).toBe('modified description');
 });
+
+test('dueDate setter modifies the task dueDate', () => {
+  task.dueDate = '2022-2-20';
+  expect(task.dueDate).toBe('2022-2-20');
+});
+
+test('priority setter modifies the task priority', () => {
+  task.priority = 'hight';
+  expect(task.priority).toBe('hight');
+});
+
+test('status setter modifies the task status', () => {
+  task.status = 'in-progress';
+  expect(task.status).toBe('in-progress');
+});
