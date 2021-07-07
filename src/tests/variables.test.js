@@ -28,3 +28,38 @@ test('addTaskToProject modify a project from list of project by adding a task to
   expect(listProjects[0].tasks.length).toBe(1);
 });
 
+test('parseJsonToTask parses a json object and returns a task', () => {
+  const objJson = {
+    _title: 'my title',
+    _description: 'my description',
+    _dueDate: '2021-1-10',
+    _priority: 'medium',
+    _status: 'in-progress',
+    _projId: 1,
+    _id: 2,
+  };
+
+  const myParsedTask = parseJsonToTask(objJson);
+  expect(myParsedTask instanceof Task).toBeTruthy();
+});
+
+test('readProjectFromStorage parses a json object and returns a project', () => {
+  const projJson = {
+    _title: 'my proj',
+    _id: 3,
+    _tasks: [
+      {
+        title: 'my title',
+        description: 'my description',
+        dueDate: '2021-1-10',
+        priority: 'medium',
+        status: 'in-progress',
+        projId: 1,
+        id: 2,
+      },
+    ],
+  };
+
+  const myPoject = readProjectFromStorage(projJson);
+  expect(myPoject instanceof Project).toBeTruthy();
+});
