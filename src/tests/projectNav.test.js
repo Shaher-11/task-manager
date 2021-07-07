@@ -7,14 +7,12 @@ test('the project navbar should have the logo-project', () => {
   expect(element).not.toBeNull();
 });
 
-
 test('the project navbar should have the add-project', () => {
   const element = document.createElement('add-project');
   expect(element).not.toBeNull();
 });
 
-
-  test('the project navbar should have the add_proj_icon', () => {
+test('the project navbar should have the add_proj_icon', () => {
   const element = document.createElement('add_proj_icon');
   expect(element).not.toBeNull();
 });
